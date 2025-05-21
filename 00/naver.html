@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 로그인 -->
+    <link rel="stylesheet"  href="https://nid.naver.com/nidlogin.login?mode=form&url=https://www.naver.com/">  
+    <!--아이디 찾기 -->
+    <link rel="stylesheet"  href="https://nid.naver.com/user2/help/idInquiry?lang=ko_KR">  
+    <!-- 비밀번호 찾기 -->
+    <link rel="stylesheet"  href="https://nid.naver.com/user2/help/pwInquiry?lang=ko_KR">  
+    <!-- 회원가입 -->
+    <link rel="stylesheet"  href="https://nid.naver.com/user2/join/agree?lang=ko_KR&realname=">  
+    <style>
+        /* 상자 */
+        div{
+            width: 500px; height: 180px;
+            border: 1.5px solid  lightgray; border-radius: 5px;
+        }
+        /* 모든 폰트 */   
+        div>p:nth-child(1){text-align: center; color: rgb(65, 65, 65); }
+        div>p:nth-child(2){line-height: 50px;}
+        div>p:nth-child(3){font-size: 14px;}
+        /* 네이버를 더 안전하고 편리하게 이용하세요! */
+
+        p {text-align: center; color: rgb(65, 65, 65); }
+        
+        .fontCol{color: rgb(119, 119, 119); text-decoration: none;}
+        .fontCol:hover {text-decoration: underline;}
+        /* 네이버 로그인 */
+        .naver{ 
+            width: 350px; height:50px; border: 2px solid #17b75e; background-color: #03c75a;
+            text-align: center; 
+            text-decoration: none;
+            border-radius: 5px; margin: 0 auto; font-size: 18px; 
+        }
+        .naver:hover{
+           background: #17b75e;
+             box-shadow: 1px 4px 3px #108342,
+            }
+        
+            /* box-shadow: 1px 4px 3px #108342,
+             2px 8px 6px inset #16a757;} */
+
+        a {color: white; text-decoration: none;}
+        span{font-weight: bolder;}
+      
+      
+    
+    </style>
+
+</head>
+<body>
+   <div>  
+        <p>네이버를 더 안전하고 편리하게 이용하세요!</p>
+
+        <p class="naver"><a href="https://nid.naver.com/nidlogin.login?mode=form&url=https://www.naver.com/" rel="stylesheet"><span>NAVER</span>로그인</a></p>
+        
+        <p> <a class="fontCol" href="https://nid.naver.com/user2/help/idInquiry?lang=ko_KR">아이디 찾기</a>
+            <a class="fontCol" href="https://nid.naver.com/user2/help/pwInquiry?lang=ko_KR">│ 비밀번호 찾기 │</a>
+            <a class="fontCol" href="https://nid.naver.com/user2/join/agree?lang=ko_KR&realname=">회원가입</a>
+        </p>
+    </div>
+</body>
+</html>

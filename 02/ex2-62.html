@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @keyframes sample {
+            0%{background: firebrick; transform: translate(0,0);}
+            50%{background: cornflowerblue; transform: translate(30px,20px);}
+            100%{background: forestgreen; transform: translate(0,0);}
+        }
+        p{  
+            width: 100px; height: 100px;
+            padding: 10px;
+            animation: sample 4s linear forwards; 
+            animation-iteration-count: infinite;
+            animation-direction:alternate-reverse;
+            animation-delay: 3s;
+            /* alternate : 정방향 -역방향 한번씩  */
+            /* reverse-alternate : 역방향 - 정방향 한번씩  */
+        }
+        
+    </style>
+</head>
+<body>
+    <p>Animation</p>
+</body>
+</html>

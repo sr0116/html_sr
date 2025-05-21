@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+body{margin: 20px;}
+div{
+    width: 600px; height: 100px; margin-bottom: 20px; border: 10px solid transparent;
+}
+div{
+    border-image-source:url(img/border.png) ;
+    border-image-width: 27px;
+}
+/* browser vendor prefix
+
+to right
+-webkit- right
+-moz left
+    -webkit : chrome, safari, edge, whale
+    -moz- : firefox
+    -ms- : 이제 아예 안쓰임
+*/
+/* .round{border-image-repeat: round; -webkit-border-image: url(img/border.png) 27 round; } */
+.round{border-image: url(img/border.png) 27 round; }
+/* 같은 픽셀로 반복 */
+.repeat{border-image: url(img/border.png) 27 repeat ;}
+/* 안잘리게 */
+.stretch{border-image: url(img/border.png) 27 stretch; }
+    </style>
+    
+</head>
+<body>
+    <div class="round"></div>
+    <div class="repeat"></div>
+    <div class="stretch"></div>
+</body>
+</html>

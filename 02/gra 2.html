@@ -7,35 +7,27 @@
     <style>
         .box {width: 300px; height: 200px;margin: 0 auto; }
         /* linearGradient([방향], color stop1, color stop 2)
-        direction : 문자, 각도 (deg) */
-        .box1{background-image: linear-gradient(to right, white , black );}
-        .box2{background-image: linear-gradient(to left bottom, white , #f008 );}
-        .box3{background-image: linear-gradient(to left bottom, white 50% , #f008 );}
-        /* 무지개 선명하게 잡아주는 법 */
-        .box4{background-image: linear-gradient(90deg,
-            red,red 20px,
-            orange 20px,orange 40px,
-            yellow 40px, yellow 60px,
-            green 60px,green 80px,
-            blue 80px,blue 100px,
-            navy 100px,navy 120px,
-            purple 120px, purple 140px  );}
-            .box5{background-image: repeating-linear-gradient(90deg,
-            red,red 20px,
-            orange 20px,orange 40px,
-            yellow 40px, yellow 60px,
-            green 60px,green 80px,
-            blue 80px,blue 100px,
-            navy 100px,navy 120px,
-            purple 120px, purple 140px  );}
+        direction : 문자, 각도 (deg) */       
         /* color stop 크기를 지정 */
+        /* redial - gradient()l; (모양 시작 지점 at 위치, colorstop1, colorstop2..)
+         */
+         .box1{background: radial-gradient(circle,white, blue);}
+         .box2{background: radial-gradient(circle at 30px 50%,white, blue);}
+         .box3{background: radial-gradient(circle closest-side at 100px 30px, white, black);}
+         .box4{background: radial-gradient(circle closest-corner at 100px 30px, white, black);}
+         .box5{background: radial-gradient(circle farthest-side at 200px 30px, white, black);}
+         .box6{background: radial-gradient(circle farthest-corner at 200px 30px, white, black);}
+         .bulls-eye{width: 300px; height: 300px; border: 1px solid red ; border-radius: 50%;
+            background: repeating-radial-gradient(white, white 30px, red 30px,red 60px);}
     </style>
 </head>
 <body>
-    <div class=" box box1"></div>    
-    <div class=" box box2"></div>    
+    <!-- <div class=" box box1"></div>    
+    <div class=" box box2"></div>     -->
     <div class=" box box3"></div>    
     <div class=" box box4"></div>    
     <div class=" box box5"></div>    
+    <div class=" box box6"></div>    
+    <div class=" bulls-eye"></div>    
 </body>
 </html>

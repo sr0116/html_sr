@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{background-color: rgb(213, 221, 255);}
+    *{font-family: '맑은 고딕';}
+     header,nav , main, footer{ border:2px dotted red ; margin: 0px; padding: 10px;}
+    .wrapper { width: 1200px; margin: 0 auto;}
+    header{
+        font-weight: bold ; font-size: 25px; line-height: 300%;
+        text-align: center; 
+        height:70px ; background-color: rgb(42, 42, 145); color: white;
+    }
+    nav{
+        display: block;
+        text-decoration:none; color: white;
+        height:30px ;background-color: rgb(135, 151, 223); 
+     }
+     
+</style>
+<body>
+     <div class="wrapper">
+        <header>쇼핑몰 회원관리 ver1.0</header>
+        
+        <nav>
+            <a href="">회원등록</a>
+            <a href="">회원목록조회/수정</a>
+            <a href="">회원매출조회</a>
+            <a href="">홈으로</a>
+        </nav>
+
+    <h1>홈쇼핑 회원 등록</h1>
+    
+        <fieldset>
+            <p>회원번호(자동발생)<input type="text"></p>
+            <p>회원성명<input type="text"></p>
+            <p>회원전화<input type="text"></p>
+            <p>회원주소<input type="text"></p>
+            <p>가입일자<input type="text"></p>
+            <p>고객등급[A:VIP,B:일반,C:직원<input type="text"></p>
+            <p>도시코드<input type="text"></p>
+        <p><legend><button>등록</button></legend></p>
+        <p>    <legend><button>조회</button></legend></p>
+        </fieldset>
+        
+    
+</body>
+</html>

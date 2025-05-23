@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .char {
+            background: url(image/7597e18ccdac3f7e5e7d8a4b90107c49.png) no-repeat;
+            background-size: 256px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 64px;
+            height: 96px;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body>
+    <div class="char"></div>
+    <script>
+        window.addEventListener("keydown", function (e) {
+            function rotateX() {
+                  // X변수 설정
+                    var x = $(".char").css("backgroundPositionX")
+                    console.log(x);
+                    $(".char").css("backgroundPositionX", (parseInt(x) - 64) % 256)
+            }
+            // 256 "384"
+            // console.log($(".char").css("backgroundPositionX", ""));
+            // console.log($(".char").css("backgroundPositionY", ""));
+
+            switch (e.keyCode) {
+                case 87: case 38: //위
+                    console.log('위쪽');
+                    
+                    $(".char").css('top', $(".char").position().top - 10)
+                    $(".char").css("backgroundPositionY", "-288px")
+                    rotateX();
+                    break;
+
+                case 68: case 39: // 오른쪽
+                    console.log('오른쪽');
+                    $(".char").css('left', $(".char").position().left + 10)
+                    $(".char").css("backgroundPositionY", "-192px")
+                    rotateX();
+                    break;
+
+                case 83: case 40: // 아래
+                    console.log('아래쪽');
+                    $(".char").css('top', $(".char").position().top + 10)
+                    $(".char").css("backgroundPositionY", "0px")
+                    rotateX();
+                    break;
+
+                case 65: case 37: //왼쪽
+                    console.log('왼쪽');
+                    $(".char").css('left', $(".char").position().left - 10)
+                    console.log($(".char").css("backgroundPositionY", "-96px"))
+                    rotateX();
+                    break;
+
+            }
+        })
+    </script>
+</body>
+
+</html>

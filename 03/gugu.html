@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // var arr = ['red', 'orange', 'green', 'blue'];
+        // document.write("<ul>")
+        //     for (var i= 2; i<=9 ;i++){
+        //         for(var j = 1; j <=9 ; j++){
+        //             var rand = parseInt(Math.random() * arr.length);
+        //     document.write(`<li>${i} * ${j} = ${i*j} </li>`);
+        //     // document.write(`<li style='color:${arr[rand]}'>${i} *${j}=${i*j}</li>`);
+        //         }
+        // }
+        // document.write("</ul>")
+        // 사용자로 부터 숫자를 입력받고
+        
+        //  1부터 해당숫자까지의 홀수 합계를 출력 alter
+        //  ex) 1~50까지의 합계
+        
+        // var input = Number(prompt('숫자 입력',50));
+        // var sum = 0;
+        // for(i = 1 ; i <= input ; i++){          
+        //     if(i % 2 == 1){
+        //         sum += i;
+        //     }
+        // }
+        // alert(sum);
+
+    
+    //사용자로 부터 숫자를 입력받고
+        
+        //  1부터 해당숫자까지의 짝수 합계를 출력 alter
+        //  ex) 1~50까지의 합계
+        
+        // var num = Number(prompt('숫자를 입력하세요', 20));
+        // var j = 0;
+        // for(i = 1 ;i <= num ; i++ ){
+        //     if(i % 2 == 0){
+        //         j += i;
+        //     }
+        // }
+        // alert (j);
+        
+    var i = 2;
+    while (i <= 9){
+        var j = 1;
+        while(j < 10) {
+            document.write(`${i} * ${j} = ${i*j}<br>`)
+            j++;
+        }
+        
+        i++;
+    }
+
+
+    </script>
+    <style>
+
+    </style>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <img src="https://search.pstatic.net/sunny/?src=http%3A%2F%2Fdown.humoruniv.com%2Fhwiparambbs%2Fdata%2Fpdswait%2Fa_w75606e002_98cf21e9a11914d43377005d37c383fea77a84b6.jpg&type=sc960_832"alt="">
+    <hr>
+    <input><button> 이미지 변환</button>
+    <script>
+        document.querySelector("button").addEventListener("click", function(){
+            const input = document.querySelector("input").value;
+            document.querySelector("img")["src"] = input;
+
+        }); -->
+    <img src="https://search.pstatic.net/sunny/?src=http%3A%2F%2Fdown.humoruniv.com%2Fhwiparambbs%2Fdata%2Fpdswait%2Fa_w75606e002_98cf21e9a11914d43377005d37c383fea77a84b6.jpg&type=sc960_832"alt="">
+    <hr>
+    <input><button> 이미지 변환</button>
+    <script>
+        document.querySelector("button")["addEventListener"]("click", function(){
+            const input = document.querySelector("input")["value"];
+            const img = document.querySelector("img");
+            img.src = input;
+            img.style.border = '1px solid';
+            // img.style["border-redius"] = '20px';
+            img.style.borderRadius = '20px';
+            // https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMTAyMjBfMjUy%2FMDAxNjEzODIyNDQ1MTMz.gkrO2Q8mE7Rwxu6_-vVUzfpoa6oR1HZAxwRAihvY-V0g.dMuPPRFVDfMcizo2I0OCxmmi8GbxQp1XPWV2DyicHsQg.JPEG.gpwlszzang14%2FIMG_6119.jpg&type=sc960_832
+
+        });
+    </script>
+</body>
+</html>

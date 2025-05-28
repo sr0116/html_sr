@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {padding: 20px; border: 1px solid black;}
+    </style>
+</head>
+<!-- // 이벤트 전파 :자손에서 -> 부모 (이벤트 버블링) // 반대 캡처링 // 차단 스탑프로퍼게이션?-->
+<body>
+    <div onclick="alert(1)">
+        <div onclick="alert(2) ; event.stopImmediatePropagation()">
+            <div onclick="alert(3)">
+                <div onclick="alert(4)">헬로</div> 
+            </div>
+        </div>
+    </div>
+</body>
+</html>

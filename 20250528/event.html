@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //click > event type, name
+        // on click > event atty
+    </script>
+</head>
+<body>
+    <a href="#" onclick="alert(this.innerHTML); alert(10);">클릭 미</a> 
+    <button id="btn1">버튼</button>
+    <button id="btn2">버튼</button>
+    <button id="btn3">버튼</button>
+     <script>
+        const aTag = document.querySelector("a");
+        // aTag.onclick = function() {
+        //     alert(this.innerHTML); //thos = a 
+        // }
+        // 이벤트 속성에 부여되는 함수 :이벤트 리스너, 핸들러
+       const btns =  document.getElementsByTagName("button");
+       console.log(btns);
+       console.log(btns.length);
+    //    console.log(btns);
+
+       const btn = document.getElementById("btn1");
+        // const date = new Date();
+        btn.onclick =  _ => (alert(new Date()));
+        // btn.onclick = function () {
+        //     (alert(date));
+        // }
+         btn.onclick =  _ => (alert(2));
+
+        const btn2 = document.querySelector("#btn2")
+        btn2.addEventListener("click", function(){
+            alert("두번째 버튼 클릭")
+        }); // 두번 사용하면 두번 뜸
+        btn2.addEventListener("click", function(e){
+            console.log(event);
+            console.log(e);
+            alert("두번째 버튼 클릭")
+        }); // 두번 사용하면 두번 뜸
+        btn2.addEventListener("click", _=> alert("세번째 이벤트"));
+    // alert(btn1);
+
+       //btn1을 클릭했을 때 현재 시간 정보를 alert로 출력
+     </script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .join-frm {
+            width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .join-frm input {
+            width: 95%;
+            padding: 8px;
+        }
+
+        .join-frm button {
+            width: 455px;
+            padding: 8px;
+        }
+
+        .join-frm div {
+            margin: 32px 0;
+        }
+
+        .join-frm .valid-msg {
+            font-size: 12px;
+            color: red;
+            visibility: hidden;
+        }
+
+        .join-frm .valid-msg.active {
+            visibility: visible;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 아이디, 영소문자만 허용
+     비밀번호 8글자 이상,
+      비밀번호, 비밀번호와 같은 값
+      이름, 
+      이메일 유효성 검증 정규식 -->
+
+    <form name="frm" class="join-frm">
+        <div>
+            <p> <label>아이디</label></p>
+            <p> <input type="text" name="id" id="id"></p>
+            <p class="valid-msg">아이디는 영소문자만 이루어져야 합니다.</p>
+        </div>
+        <div>
+            <p> <label>비밀번호</label></p>
+            <p> <input type="password" name="pw" id="pw"></p>
+            <p class="valid-msg">비밀번호는 8자 이상 가능합니다.</p>
+        </div>
+        <div>
+            <p> <label>비밀번호 확인</label></p>
+            <p> <input type="password" name="pwck" id="pwck"></p>
+            <p class="valid-msg">비밀번호가 서로 일치하지 않습니다.</p>
+        </div>
+        <div>
+            <p> <label>이름</label></p>
+            <p> <input type="text" name="id" id="id"></p>
+            <p class="valid-msg">이름은 두글자 이상 가능합니다. </p>
+        </div>
+        <div>
+            <p> <label>email</label></p>
+            <p> <input type="text" name="email" id="email"></p>
+            <p class="valid-msg">유효한 이메일을 입력하세요</p>
+        </div>
+        <button>회원가입</button>
+    </form>
+    <script>
+        function vaildate(target, regexp) {
+            return regexp.test(target);
+        }
+        // console.log(document.querySelectorAll(".join-frm input"));
+        const inputs = document.querySelectorAll(".join-frm input");
+        const regexps = {
+            id: /^[a-z]+$/,
+            pw: /^[\w]{8,}/,
+            pwck: null,
+            name: /^[가-힣A-Za-z]{2,}$/,
+            email: /^[\w-.]+@([\w-]+.)+[\w-]{2,4}$/
+        }
+
+        function vaildateField(input) {
+            const name = input.id;
+            const msgClassList = input.closest("div").querySelector(".valid-msg").classList;
+
+            if (name === "pwck") {
+                // document.querySelector("#pw").value === input.value ? msgClassList.remove("active") : msgClassList.add("active");
+                const valid = document.querySelector("#pw").value === input.value;
+                msgClassList.toggle("active", !valid);
+                return valid;
+            } else if (regexps[name]) {
+                const valid = vaildate(input.value, regexps[name]);
+                msgClassList.toggle("active", !valid);
+                // console.log(regexps[name], valid);
+                return valid;
+                // vaildate(input.value, regexps[name]) ? msgClassList.remove("active") : msgClassList.add("active")
+            }
+            return true;
+        }
+
+        inputs.forEach(input => {
+            input.addEventListener("input", () =>
+                vaildateField(input));
+        });
+
+        document.querySelector(".join-frm").addEventListener("submit", e => {
+            let isValid = true;
+            inputs.forEach(input => {
+                const valid = vaildateField(input);
+                debugger;
+                if(!valid) isValid = false;
+            })
+            if(!isValid){
+            event.preventDefault(); //submit 방지
+            alert('확인');
+            }
+            // console.log('확인');
+        })
+
+    </script>
+</body>
+
+</html>

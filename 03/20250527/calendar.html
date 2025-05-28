@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>달력</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        table { border-collapse: collapse; width: 100%; max-width: 1200px; margin: 0 auto;}
+        table, th, td { border: 1px solid black;}
+        table h2 {display: inline-block; }
+        table caption > * {
+            margin:  16px 20px; margin-top: 20px; vertical-align: middle;}
+
+        table caption > button {
+            border: 1px solid black; background: transparent; cursor: pointer; width: 30px; height: 30px; line-height: 16px; border-radius: 50%; transition: all .3s;
+    }
+        table caption > button:hover {box-shadow: 0 0 3px black, 2px 2px 5px #ddd; 
+        }
+        th, td { height:  100px;}
+        td { vertical-align: top; padding: 16px;}
+        tr > *:first-child {color: red;}
+        tr > *:nth-child(7) {color: blue;}
+    </style>
+    <script>
+        // function allMonths (){
+        //     let butt ="<button>"
+        //       for(let j =1 ; j <=12 ; j++){  //-3, -2, -1, 0
+        //      butt +=  `<h2><button>2025.${j}.</h2>`
+        //       }
+        //       butt += "<button>"
+        //         document.querySelector("button").innerHTML = butt;
+        //     }
+        
+        function drawCalander() {
+            const date = new Date();
+            const year = date.getFullYear();
+            const month = date.getMonth();
+
+            const allMonths = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+            const lastDate =allMonths[month];
+            if (month === 1 &&  year % 4 === 0 && year % 100 !== 0 || year % 400 === 0) {
+                lastDate = 29;
+            }
+            
+            date.setDate(1);
+            
+            const firstDay = date.getDay();
+            console.log(firstDay);
+            
+            
+            let str = "<tr>";
+            
+            let count = 1;
+            for(let i = 1 - firstDay ; ; i++) { //무한반봇
+                str += '<td>';  
+                    str += i <= lastDate && i >= 1 ? i : '';
+                    str += '</td>';  
+                count++;
+                console.log(count-1, i)
+                if(lastDate <= i && (count-1) % 7 == 0 )break;
+                  if(i % 7  == (7 - firstDay) % 7 ) { 
+                      str += "</tr><tr>";
+                }
+            }
+            str += "</tr>"
+            document.querySelector("table tbody").innerHTML = str;
+         }
+    
+        //     for(let i = 1 - firstDay ; i <= 35 - firstDay; i++) {  //-3 <= i <= 31
+        //         str += `<td>${i > 0 ? i : ''}</td>`;  //-3, -2, -1, 0
+        //         if((i + firstDay) % 7 == 0 ) { 
+                    
+        //             str += "</tr><tr>"
+        //         }
+        //     }
+        //     str += "</tr>"
+        //     document.querySelector("table tbody").innerHTML = str;
+        //  }
+    
+        window.onload = function(){
+            drawCalander();
+          
+           
+        }
+         
+
+
+        </script>
+</head>
+<body>
+    <table>
+        <caption>
+             <button><i class="fa-solid fa-left-long"></i></button>
+            <button><i class="fa-solid fa-left-long"></i></button>
+            <h2>2025. 05.</h2>
+            <button><i class="fa-solid fa-right-long"></i></button>
+            <button><i class="fa-solid fa-right-long"></i></button>
+        </caption>
+        <thead>
+        <tr>
+            <th>일</th>
+            <th>일</th>
+            <th>일</th>
+            <th>일</th>
+            <th>일</th>
+            <th>일</th>
+            <th>일</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+        </tr>
+        </tbody>
+    </table>  
+</body>
+</html>

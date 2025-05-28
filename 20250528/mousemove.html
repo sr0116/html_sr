@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .area {width: 100%; max-width: 800px; height: 500px; border: 1px solid; margin: 0 auto;}
+        .hori{width: 100%; height: 1px; background-color: #888; transform:translateY(30px);}
+        .ver{width: 1px; height: 100%; background-color: #888; transform: translateX(100px);}
+    </style>
+</head>
+<body>
+    <h2>마우스 포인터 위치 확인</h2>
+    <div class="area">
+        <div class="hori"></div>
+        <div class="ver"></div>
+    </div>
+    <p> x : 0, y : 0</p>
+    <script>
+        document.querySelector(".area").addEventListener("mousemove", e => {
+            // console.log(e.offsetX, e.offsetY);
+            document.querySelector("p").innerHTML = ` x : ${e.offsetX}, y : ${e.offsetY}`
+        document.querySelector(".hori").style.transform= `translateY(${e.offsetY}px`
+        document.querySelector(".ver").style.transform= `translateX(${e.offsetX}px`
+        console.log(document.querySelector(".hori").style.transform);
+        console.log(document.querySelector(".ver").style.transform);
+        });
+        // 해당 마우스 포인터 위치에 크로스 헤어 만들기
+
+
+   
+    </script>
+</body>
+</html>

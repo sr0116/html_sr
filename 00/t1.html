@@ -7,25 +7,32 @@
 </head>
 <body>
     <!-- HTML 참고 구조 -->
-    <ul id="userList"></ul>
-    <li></li>
+    <ul id="userList">
+       
+    </ul>
+    <ul></ul>
+    <ul></ul>
+    <ul></ul>
+    <ul></ul>
 
     <script>
-        // for (let i in window) {
-        //     // document.write(`<p>${i} :: ${window[i]}</p>`);
-        // }
-
+        // 20세 이상인 유저만 <li>로 만들어 #userList에 출력하세요.
+        // 출력 예: <li>영희 (22세)</li>, <li>민수 (35세)</li>
+        
         const users = [
             { name: "철수", age: 17 },
             { name: "영희", age: 22 },
             { name: "민수", age: 35 },
             { name: "지우", age: 15 },
         ];
-        console.log(users.filter(u => u.age > 20));
-        document.(`<li>${users.filter(u => u.age > 20)}</li>`)
-        ;
-        // 20세 이상인 유저만 <li>로 만들어 #userList에 출력하세요.
-        // 출력 예: <li>영희 (22세)</li>, <li>민수 (35세)</li>
+        // console.log(users.filter(u => u.age > 20)); -> 민수=, 영희
+        const userList = document.querySelectorAll("body ul");
+        // userList.innerHTML= users.filter(u => u.age > 20).map(u => `<li>${u.name} (${u.age}세)</li>`).join("");
+        userList.forEach(v => { //All로 사용해줘야 함
+            v.innerHTML = users.filter(u => u.age > 20).map(u => `<li>${u.name} (${u.age}세)</li>`).join("");
+        })
+        console.log(userList.forEach);
+    
     </script>
 </body>
 </html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- HTML 참고 구조 -->
+    <p id="totalPrice"></p>
+    <script>
+        const cart = [
+            { name: "노트북", price: 1200000, qty: 1 },
+            { name: "키보드", price: 150000, qty: 2 },
+            { name: "마우스", price: 50000, qty: 3 },
+        ];
+        sum = 0;
+       const a= cart.reduce((pre,cur) => (pre + cur.price), 0);
+       console.log(a);
+        const totalPrice = document.querySelector("#totalPrice");
+        // userList.innerHTML= users.filter(u => u.age > 20).map(u => `<li>${u.name} (${u.age}세)</li>`).join("");
+        totalPrice.innerHTML = `${cart.reduce((pre,cur) => pre + (cur.price * cur.qty), 0)}원`;
+       console.log(totalPrice.innerHTML);
+        // reduce()를 사용하여 총합 가격을 계산하고 #totalPrice에 ₩합계원 형식으로 출력하세요.
+        </script>
+</body>
+</html>

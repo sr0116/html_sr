@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>학생데이터 가져오기</button>
+    <ul>
+    </ul>
+    <script>
+
+        document.querySelector("button").addEventListener("click", e => {
+            const xhr = new XMLHttpRequest();
+            xhr.open("GET", "students.xml");
+
+            xhr.onreadystatechange = () => {
+                // console.log(xhr);
+                // console.log(xhr.readyState);
+                if (xhr.status === 200 && xhr.readyState === 4) {
+                    // console.log(xhr.responseXML);
+                    const data = xhr.responseXML;
+                    // console.log(data.querySelectorAll("studnnt"));
+                    let str = "";
+                    data.querySelectorAll("student").forEach(s => {
+                      str += `<li>
+                        ${s.querySelector("no").innerHTML}
+                        ${s.querySelector("name").innerHTML}
+                        ${s.querySelector("score").innerHTML}
+                        </li>`;
+                    });
+                    
+                    document.querySelector("ul").innerHTML += str;
+                }
+            }
+            xhr.send();
+        });
+    </script>
+</body>
+
+</html>

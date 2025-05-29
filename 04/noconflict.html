@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"></script>
+    <script>
+        jQuery.noConflict();
+        console.log($);
+        jQuery(function () {
+            jQuery("p").css("color", "red");
+        });
+        (function ($) {
+            $(function () {
+                //분리된 공간
+                $("p").css("text-align", "center");
+            });
+        })(jQuery); // 한번사용하고 버림
+
+    </script>
+</head>
+
+<body>
+    <p>테스트 문자열</p>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width='device-width', initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- HTML 참고 구조 -->
+    <ul id="userList"></ul>
+    <li></li>
+
+    <script>
+        // for (let i in window) {
+        //     // document.write(`<p>${i} :: ${window[i]}</p>`);
+        // }
+
+        const users = [
+            { name: "철수", age: 17 },
+            { name: "영희", age: 22 },
+            { name: "민수", age: 35 },
+            { name: "지우", age: 15 },
+        ];
+        console.log(users.filter(u => u.age > 20));
+        document.(`<li>${users.filter(u => u.age > 20)}</li>`)
+        ;
+        // 20세 이상인 유저만 <li>로 만들어 #userList에 출력하세요.
+        // 출력 예: <li>영희 (22세)</li>, <li>민수 (35세)</li>
+    </script>
+</body>
+</html>

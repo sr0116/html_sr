@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function myFunc() {
+            console.log("hello");
+        }
+        // 
+        for (let i in window) {
+            // document.write(`<p>${i} :: ${window[i]}</p>`);
+        }
+        window.myFunc();
+        onload = function () {
+
+        }
+        var num = 10; //
+        window.a = "abcd"; // num이랑 같음
+        // window.alert(window.num);
+        // window.alert(a);
+        // delete window.a;
+
+
+    </script>
+</head>
+
+<body>
+    <button>클릭</button>
+    <script>
+        document.querySelector("button").addEventListener("click", function () {
+            let w = window.open("../20250528/validation.html", '', 'width = 300, height = 300 , top = 500, left= 500' );
+            console.log(w);
+
+            setInterval(() => {
+                w.moveBy(100, 100)
+            }, 100);
+
+            setTimeout(() => {
+                w.close();
+                clearInterval(inter);
+            }, 3000);
+        })
+
+    </script>
+</body>
+
+</html>

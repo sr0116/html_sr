@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"></script>
+    <script>
+        //DOM 가져오기에 좋음
+    </script>
+</head>
+
+<body>
+    <p>안녕하세요1</p>
+    <p>안녕하세요2</p>
+    <p>안녕하세요3</p>
+    <p>안녕하세요4</p>
+    <script>
+        //$ : 타입 함수 :eq(0),:eq(2),lt(2): 2보다 작은것 
+        console.log($("p").text());
+        $("p")
+        .css('color', 'red')
+        .filter(":lt(2)") 
+        .css({ textAlign: 'center'})
+        .click(function () {
+            alert($(this).text());
+        })
+
+        console.log($);
+        console.log(jQuery); // 두개 모두 같음
+        //체이닝 조건 나를 반환, return this
+        // $(String), $(object), $(function)
+    </script>
+</body>
+
+</html>

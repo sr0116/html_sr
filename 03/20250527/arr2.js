@@ -72,20 +72,22 @@ console.log(books.find(a=> a.page >= 300).title);
 // reduce 가장 고가의 상품 이름을 조회 >> 노트북
 const products = [
     {name : "노트북", price : 1200000},
-    {name : "키보드", price :150000},
+    {name : "키보드", price :15000000000},
     {name : "마우스", price : 50000},
     {name : "모니터", price :300000 }
 ]
-products.reduce((pre, cur) => {
-    return pre < cur.price ? cur : pre
-}, 0).name;
+// products.reduce((pre, cur) => {
+//     return pre < cur.price ? cur : pre
+// }, 0).name;
+// const ret = cart.reduce((prev,curr) => prev + curr.qty * curr.price, 0)
 
 // reduce 내부요소들간의 연산 (prev는 이전 값, curr은 탐색하는 값 (for문의 i와 비슷) 뒤에 나오는 값은 기본값)
 // const sum = [1,2,3,4].reduce((prev, curr) => prev + curr, 0)
-console.log(products.reduce((pre, cur) => {
-    return pre < cur.price ? cur : pre
-}, 0).name
-);
+console.log(products.reduce((pre, cur) => pre.price > cur.price ? pre : cur).name);
+
+    const bb = products.reduce((pre, cur) => pre.price > cur.price ? pre : cur);
+console.log(bb.name);
+
 
 for(let i = 0 ; i < 10 ; i++) {
 }

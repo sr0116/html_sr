@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"></script>
+    <style>
+        * {
+            margin: 5px;
+        }
+
+        #m1>p:last-child {
+            height: 20px;
+        }
+
+        span {
+            display: inline-block;
+            height: 20px;
+        }
+    </style>
+    <script>
+        //  $("div:eq(0)")
+        //     .add("div:eq(1)").css("border", "1px solid")
+        //     .end().css("background", "gray");
+        $(function () {
+            $("#m1") //getter setter 개수 차이는 항상 1개씩 차이가남, 문자열 2개를 사용하면 세터,세터 자기 자신을 리턴, 아래 예제가 세터
+                .find(">p:contains('html')").css("border", "4px solid red") //function () {return "4px solid red"} e도 가능
+                .end()
+                .find(">p:empty").css("border", "4px solid orange") // .css({border : "4px solid orange"}) //객체도 가능
+                .end()
+                .next()//#m2
+                .find("> span:parent")
+                .css("border", "4px solid yellow")
+                .end()
+                .next()//#m3
+                .find("section:has(article)").css("border", "4px solid green");//() =>"4px solid green
+
+            // $(function () {
+            //     $("#m1 > p:contains('html')").css("border", "4px solid red");
+            //     $("#m1 > p:empty").css("border", "4px solid orange");
+            //     $("#m2 > span:parent").css("border", "4px solid yellow");
+            //     $("#m3 > section:has(article)").css("border", "4px solid green");
+            // })
+
+            $("div").each(function (i, j) {
+                console.log(i, j);
+                // console.log(j, $(j).is(":first-child")); // is-> 상태
+                 console.log($(this).find(">*").css("borderColor"));
+            });
+            const obj = ['red', 'green', 'blue']
+            $.each(obj, function (i, j) {
+                console.log(i, j);
+
+            })
+        })
+
+    </script>
+</head>
+
+<body>
+    <div id="m1">
+        <p>html, css, javascript</p>
+        <p>html5와 웹표준</p>
+        <p></p>
+    </div>
+    <div id="m2">
+        <span></span>
+        <span>내용1</span>
+    </div>
+    <div id="m3">
+        <section>
+            <article>내용2-1</article>
+        </section>
+        <section>
+            <div>
+                <article>내용 2-2</article>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>

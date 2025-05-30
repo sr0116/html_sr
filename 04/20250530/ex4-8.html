@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"></script>
+    <script>
+        $(function () {
+            $("input:text").css("background", "red");
+            $("input:password").css("background", "orange");
+            $("button").css("background", "yellow");
+            $("input:checked + label").css("background", "green");
+            $("option:selected").css("color", "blue");
+            $("textarea:disabled").css("background", "pink");
+            console.log($("div").find(function () {
+                return "label";
+            }).text());
+            $("div:eq(0)")
+            .add("div:eq(1)").css("border", "1px solid")
+            .end().css("background", "gray");
+        });
+    </script>
+</head>
+
+<body>
+    <!-- 속성을 작성해주냐 아니냐에 따라 css속성 적용 여부 결정 -->
+    <div><input type=""></div>
+    <div><input></div>
+    <div><input type="text"></div>
+    <div><input type="password"></div>
+    <div><button>확인</button></div>
+    <div><input type="checkbox" id="css" checked="checked"><label for="css">css</label>
+    </div>
+    <select>
+        <option>과목선택</option>
+        <option>javascript</option>
+        <option selected="selected">jQuery</option>
+        <div>
+    </select>
+    <textarea cols="20" rows="5" disabled="disabled">javascript</textarea>
+    </div>
+</body>
+
+</html>

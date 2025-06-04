@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"></script>
+    <script>
+        $(function () {
+            $("<h1>추가된 녀석</h1>").appendTo("body");
+            $("button").click(function () {
+                $("<h1>버튼으로 추가된 녀석</h1>").appendTo("body");
+                // $("h1").click(function () { console.log($(this).text()); }) // 불합리, 이벤트 위임
+            })
+            // $("h1").click(function(){ console.log($(this).text());})
+            // $("button").on("click dblclick", function () {})
+
+            const f = function () {
+                console.log(event.type);
+            };
+            $("button").on("click dblclick", f);
+
+            $("button").off("click", f); //삭제, 더블 클릭만 남음
+
+            $("body").on("click", "h1", function () {
+                console.log($(this).text()); //
+                // on( events [, selector ] [, data ], handler )
+                // events,handler 는 필수
+                // ]h1이 형제 셀렉터 자주 사용, 위임 상속이랑 다름, 꼭 바디일 필요는 없음, 
+                // 현재 값이 없을 때, 비동기로 값을 일괄적으로 가져왔을 때 사용 ex) 리뷰
+            });
+            $("h3").on("click", function () {
+                console.log($(this).text());
+                $(this).off("click");
+            });
+            $("h3").one("click", function () {
+                console.log("one으로 콘솔");
+            });
+        });
+
+
+    </script>
+</head>
+
+<body>
+    <button>추가</button>
+    <h1>원래 있던 녀석</h1>
+    <h3>나는 h3이야</h3>
+</body>
+
+</html>

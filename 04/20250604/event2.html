@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"></script>
+    <script>
+        $(function () {
+            const f = function () {
+                console.log($(this).text()); // 인자
+            }
+            
+            $("h1").click(f).css("color", "red") // setter
+                .click().click().click(); //getter;
+
+            $("h1").on("click", function () {
+                console.log("official event bind");
+            });
+
+            $("h1").trigger("click");
+        })
+
+    </script>
+</head>
+
+<body>
+    <h1>안녕 난 h1이야</h1>
+</body>
+
+</html>

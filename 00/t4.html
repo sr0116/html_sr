@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+     <!-- js를 사용 해 input을 클릭시 value가 사라지도록 처리 -->
+    <input type="text" id="hi" value="안녕">
+    
+</body>
+<script>
+   const hiRemove= document.querySelector("#hi");
+   hiRemove.addEventListener('click', () => {
+      hiRemove.value = '';
+   });
+       
+    </script>
+</html>

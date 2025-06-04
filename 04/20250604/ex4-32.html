@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .outer {padding: 50px; width: 100px; height: 100px; background-color: orange;}
+        .outer div {width: 100px; height: 100px; background-color: red;}
+
+        .outer:hover {background-color: blue;}
+    </style>
+     <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"></script>
+     <script>
+        //over 사용 지양, enter 사용
+        // enter <<>> leave
+        $(function(){
+            // $(".outer").on(" mouseover", function(){
+            //     $("<h1>").html("over").appendTo("body");
+            // }).on("mouseenter", function(){
+            //     $("<h1>").html("enter").appendTo("body");
+            // });
+            $(".outer").hover(function(){
+                $("<h1>").html("enter").appendTo("body");
+            }, function(){
+                $("<h1>").html("leave").appendTo("body");
+            });
+            $("input").on("input", function(){
+                console.log($(this).val());
+            });
+            $("textarea").val("값 초기화")
+        });
+     </script>
+</head>
+<body>
+    <div class="outer">
+        <div></div>
+    </div>
+    <input>
+    <textarea>abcd</textarea>
+</body>
+</html>

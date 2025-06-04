@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            border: 1px solid;
+            padding: 30px;
+            margin: 30px 0;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"></script>
+    <script>
+        //글리치(딜레이), debounce
+        let isLoding = false;
+
+
+        function loadMoreContent() {
+            if (isLoding) return;
+            isLoding = true;
+
+
+
+            if ($("body h1").length < 100) {
+                $("h1").css("opacity", "0.3"); // 로딩 중일 때 투명도 값
+                setTimeout(function () {
+                    $("body h1").clone(true, true).each(function (i) { //true 이벤트도 복제됨 true 2개 그 하위계층의 이벤트도 복제
+                        const idx = $("body h1").length + i + 1;
+                        $(this).find("span").text(idx);
+                    })// 여기까지 제이쿼리객체
+                        .appendTo("body");
+
+                    isLoding = false;
+                    $("h1").css("opacity", "1");
+                }, 1000)
+            }
+            else {
+                isLoding = false;
+
+            }
+        }
+        $(function () {
+            $("h1").click(function () {
+                console.log($(this).text());
+            })
+            $(window).scroll(function () {
+                // console.log($(this).scrollTop() +$(this).height() + 100 >=  $(document).height() );    
+                // console.log("doc2 hieght" + $(document).height());
+                // console.log("win2 hieght" + $(window).height());  
+
+                if ($(this).scrollTop() + $(this).height() + 100 >= $(document).height()) {
+                    loadMoreContent();
+                }
+            })
+            $("button").click(function () {
+                console.log("doc hieght" + $(document).height());
+                console.log("win hieght" + $(window).height());
+            });
+        })
+    </script>
+</head>
+
+<body>
+    <button>문서 높이 계산</button>
+    <h1>요소 <span>1</span></h1>
+    <h1>요소 <span>2</span></h1>
+    <h1>요소 <span>3</span></h1>
+    <h1>요소 <span>4</span></h1>
+    <h1>요소 <span>5</span></h1>
+    <h1>요소 <span>6</span></h1>
+    <h1>요소 <span>7</span></h1>
+    <h1>요소 <span>8</span></h1>
+    <h1>요소 <span>9</span></h1>
+    <h1>요소 <span>10</span></h1>
+</body>
+
+</html>

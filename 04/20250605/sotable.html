@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>jQuery UI Sortable - Default functionality</title>
+    <style>
+        h1 {
+            border: 1px solid;
+            margin: 20px 10px;
+            display: inline-block;
+            width: 200px;
+            padding: 2em;
+
+        }
+
+        h2 {
+            cursor: pointer;
+            background: #ddd;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.14.1/jquery-ui.min.js"
+        integrity="sha512-MSOo1aY+3pXCOCdGAYoBZ6YGI0aragoQsg1mKKBHXCYPIWxamwOE7Drh+N5CPgGI5SA9IEKJiPjdfqWFWmZtRA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://momentjs.com/downloads/moment.js"></script>
+    <script>
+        $(function () {
+            $("div.sort").sortable();
+            $("div.faq").accordion();
+
+            setInterval(() => {
+                $(".date").html(moment().format('yyyy-MM-DD hh:mm:ss'))
+                // document.querySelector(".date").innerHTML = moment().format('yyyy-MM-DD hh:mm:ss')
+            }, 1000);
+        });
+    </script>
+</head>
+
+<body>
+
+    <div class="date"></div>
+
+    <div class="sort">
+        <h1>요소1</h1>
+        <h1>요소2</h1>
+        <h1>요소3</h1>
+        <h1>요소4</h1>
+        <h1>요소5</h1>
+        <h1>요소6</h1>
+        <h1>요소7</h1>
+    </div>
+    <div class="faq">
+        <h2>사람들은 왜 지각</h2>
+        <p>알람</p>
+        <h2>사람들은 왜 지각</h2>
+        <p>알람</p>
+    </div>
+</body>
+</html>

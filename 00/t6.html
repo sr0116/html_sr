@@ -1,25 +1,4 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-     <!-- js를 사용 해 input을 클릭시 value가 사라지도록 처리 -->
-    <input type="text" id="hi" value="안녕">
-    
-</body>
-<script>
-   const hiRemove= document.querySelector("#hi");
-   hiRemove.addEventListener('click', () => {
-      hiRemove.value = '';
-   });
-       
-    </script>
-
-    <!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
@@ -60,6 +39,17 @@
     #btn-greet 클릭 시, input(#username)의 값으로
     #greeting 요소에 "안녕하세요, [이름]님!" 텍스트 출력
     ****************************************************/
+
+   
+   const butt = document.querySelector("#btn-greet");
+
+    butt.addEventListener('click' , function(){
+      document.querySelector("#username").value;    
+   }
+)
+   butt.document.querySelector('change' , function(){
+
+   })
 
     /******************** JS 문제 2 ********************
     #item-list 안의 <li> 요소 중 data-price가 2000인 항목의
@@ -106,4 +96,5 @@
 
 </body>
 </html>
-</html>
+   
+  

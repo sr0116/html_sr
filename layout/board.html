@@ -1,70 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-  
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>더조은 아카데미 게시판</title>
+
+    <!-- 외부 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bxslider@4.2.17/dist/jquery.bxslider.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- jQuery & bxSlider -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bxslider@4.2.17/dist/jquery.bxslider.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <!-- header -->
-    <header id="header">
-        <h1> 더조은 아카데미 레이아웃</h1>
+    <header>
+        <h1>더조은 아카데미 레이아웃</h1>
     </header>
-    <div class="container p-0">
-    <!-- nav -->
-     <nav>
+
+    <nav>
         <ul class="container p-0">
-            <li> <a href="board?cno=1">갤러리</a></li>
-            <!-- <li> <a href="board?cno=2">자유게시판</a></li> -->
-            <li> <a href="board.html">자유게시판</a></li>
-
-
-            <li> <a href="board?cno=3">Q&amp;A</a></li>
-            <li> <a href="board?cno=4">자료실</a></li>
+            <li><a href="board?cno=1">갤러리</a></li>
+            <li><a href="board.html">자유게시판</a></li>
+            <li><a href="board?cno=3">Q&amp;A</a></li>
+            <li><a href="board?cno=4">자료실</a></li>
         </ul>
-     </nav>
-    <!-- content -->
-    <main>
-      <div class="list-group">
-        <a href="#" class="list-group-item list-group-item-action">Action item</a>
-        <a href="#" class="list-group-item list-group-item-action list-group-item-secondary">공지</a>
-        <a href="#" class="list-group-item list-group-item-action list-group-item-secondary">공지</a>
-        <a href="#" class="list-group-item list-group-item-action list-group-item-secondary">공지</a>
-        <a href="#" class="list-group-item list-group-item-action list-group-item-action">기본글</a>
-        <a href="#" class="list-group-item list-group-item-action list-group-item-action">기본글</a>
-        <a href="#" class="list-group-item list-group-item-action list-group-item-action">기본글</a>
-        <a href="#" class="list-group-item list-group-item-action list-group-item-action">기본글</a>
-        <a href="#" class="list-group-item list-group-item-action list-group-item-action">기본글/a>
-        </div>
-    </main>
+    </nav>
+
+    <div class="container p-0">
+        <main>
+            <div class="content">
+                <div class="slider">
+                    <img src="https://bxslider.com/assets/plant-bd76206132f914fc54fd28f9794f7fe346bb8b9a9d16dd5de830b93f365eea9c.jpg" alt="flowers" />
+                    <img src="https://bxslider.com/assets/daisies-aef04136667e60d9190943f4c6cd605043e67188247ffe928500edfd29b0a158.jpg" alt="img2" />
+                    <img src="https://bxslider.com/assets/succulents-7b5637dbc01af703069905a7991d9e7e7d27c680fa885fe3d6c713c1f77c0f92.jpg" alt="img3" />
+                </div>
+            </div>
+
+            <aside>
+                <div class="account">
+                    <p>네이버를 더 안전하고 편리하게 이용하세요</p>
+                    <a href="https://nid.naver.com/nidlogin.login?mode=form&url=https://www.naver.com/">
+                        <i class="navermain"><span class="naver">NAVER</span></i>로그인
+                    </a>
+                    <div>
+                        <a href="https://nid.naver.com/user2/api/route?m=routeIdInquiry">아이디 찾기</a>
+                        <i></i>
+                        <a href="https://nid.naver.com/user2/api/route?m=routePwInquiry">비밀번호 찾기</a>
+                        <i></i>
+                        <a href="https://nid.naver.com/nidregister.form?url=https%3A%2F%2Fwww.naver.com">회원가입</a>
+                    </div>
+                </div>
+            </aside>
+        </main>
     </div>
-    <!-- <footer> -->
+
     <footer>
-        <p> copyright&copy</p>
+        <p>copyright &copy;</p>
         <address>대륭포스트 2차</address>
-        </footer>
+    </footer>
 
     <div class="arrow-area">
-        <!-- 버튼 -->
-        <a href="header"> <i class="fa-regular fa-circle-up"></i></a>
-    </div> 
+        <i class="fa-regular fa-circle-up"></i>
+    </div>
+
     <script>
-        $(".slider").bxSlider ({auto:true,
-             mode : 'horizontal'
+        $(document).ready(function () {
+            $(".slider").bxSlider({
+                auto: true,
+                mode: 'horizontal'
             });
 
-        $(window).scroll(function(e) {
-                console.log(window.scrollY)
-                if(window.scrollY > 500) {
+            $(window).scroll(function () {
+                if (window.scrollY > 500) {
                     $(".arrow-area i").fadeIn(200);
-                }
-                else{
+                } else {
                     $(".arrow-area i").fadeOut(200);
                 }
-            })
-        </script>
+            });
+        });
+    </script>
 </body>
 </html>
- 
